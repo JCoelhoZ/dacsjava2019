@@ -12,18 +12,32 @@
 				        <input type="text" th:field="*{nome}" class="form-control" id="txtnome" placeholder="Digite o nome">
 				    </div>
 				    <div class="form-group">
-				        <label for="txtnome">Endereço</label>
+				        <label for="txtendereco">Endereço</label>
 				        <input type="text" th:field="*{endereco}" class="form-control" id="txtendereco" placeholder="Digite o endereço">
 				    </div>
 				    <div class="form-group">
-				        <label for="txtnome">Data de Nascimento</label>
-				        <input type="text" th:field="*{dataNascimento}" class="form-control" id="txtdataNascimento" placeholder="Data">
+				        <label for="txtdataNascimento">Data de Nascimento</label>
+				        <div class="input-group date" id="datetimepicker1" data-target-input="nearest"> 
+				        	<input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"
+				        	th:field="*{dataNascimento}"/>  placeholder="Data">
+				        	<div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+				        		<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+				        	</div>
+				    	</div>
 				    </div>
+				    
 				      
 				    <button type="submit" class="btn btn-primary">Enviar</button>
 				</form>
 			</div>
 		</div>
 		<div th:include="layout :: footer" id="footer">(footer)</div>
+		<script type="text/javascript">
+			$(function (){
+				$('#datetimepicker1').datetimepicker({
+					format:"DD/MM/YYYY HH:mm"
+				})
+			})
+		</script>
 	</body>
 </html>
