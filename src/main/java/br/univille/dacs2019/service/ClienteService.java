@@ -15,4 +15,5 @@ public interface ClienteService {
 	
 	void delete(Cliente cliente);
 	
+	Cliente findById(long id);
 }
